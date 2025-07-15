@@ -61,8 +61,6 @@ This project demonstrates how to build a robust **ELT (Extract, Load, Transform)
    - Enabled APIs: BigQuery, Cloud Storage
    - Service Account with appropriate permissions
 2. Apache Airflow (recommended via VM or Docker)
-3. Reference blog for VM-based setup:  
-   👉 [TechTrapture Blog on Airflow Setup](https://www.techtrapture.com/blogs/673a2625dd155b000b7cdb3b)
 
 ---
 
