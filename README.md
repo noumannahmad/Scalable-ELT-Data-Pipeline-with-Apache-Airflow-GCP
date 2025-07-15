@@ -1,74 +1,83 @@
-# ELT Data Pipeline with GCP and Airflow
+# Scalable ELT Data Pipeline with Apache Airflow & GCP
 
-This project demonstrates how to build an **ELT (Extract, Load, Transform)** data pipeline to process **1 million records** using **Google Cloud Platform (GCP)** and **Apache Airflow**. The pipeline extracts data from Google Cloud Storage (GCS), loads it into BigQuery, and transforms it to create country-specific tables and views for analysis.
-
-Video Tutorial  
-Part 1:   [![YouTube](https://img.shields.io/badge/YouTube-Video-red)](https://youtu.be/pilPHlOVjII)
-Part 2:   [![YouTube](https://img.shields.io/badge/YouTube-Video-red)](https://youtu.be/rIUWbSXjKe4)
+This project demonstrates how to build a robust **ELT (Extract, Load, Transform)** data pipeline using **Google Cloud Platform (GCP)** and **Apache Airflow** to process **1 million+ records**. The pipeline automates the extraction of CSV files from Google Cloud Storage (GCS), loads the raw data into BigQuery, and transforms it to generate country-specific tables and reporting views optimized for business analytics.
 
 
 ---
 
-## Features
+## 🚀 Features
 
-- Extract data from GCS in CSV format.
-- Load raw data into a staging table in BigQuery.
-- Transform data into country-specific tables and reporting views.
-- Use Apache Airflow to orchestrate the pipeline.
-- Generate clean and structured datasets for analysis.
-
----
-
-## Architecture
-
-![image](https://github.com/user-attachments/assets/87cdc79c-c9a1-4c4d-887a-ab6007394bc7)
-
-
-### Workflow
-1. **Extract**: Check for file existence in GCS.
-2. **Load**: Load raw CSV data into a BigQuery staging table.
-3. **Transform**:
-   - Create country-specific tables in the transform layer.
-   - Generate reporting views for each country with filtered insights.
-
-### Data Layers
-1. **Staging Layer**: Raw data from the CSV file.
-2. **Transform Layer**: Cleaned and transformed tables.
-3. **Reporting Layer**: Views optimized for analysis and reporting.
+- Extracts CSV data files from Google Cloud Storage.
+- Loads raw data into a staging table in BigQuery.
+- Transforms data into country-specific datasets and views.
+- Utilizes Apache Airflow for workflow orchestration.
+- Outputs clean, structured, and analysis-ready datasets.
+- Enables dynamic reporting via Looker Studio.
 
 ---
 
-## Requirements
+## 🏗️ Architecture Overview
 
-### Tools and Services
-- **Google Cloud Platform (GCP)**:
-  - Google Compute Engine ( for Airflow )
-  - BigQuery
+![Pipeline Architecture](https://github.com/user-attachments/assets/87cdc79c-c9a1-4c4d-887a-ab6007394bc7)
+
+---
+
+## 🔄 Workflow Steps
+
+1. **Extract**
+   - Check for new CSV files in a specified GCS bucket.
+2. **Load**
+   - Ingest raw data into a BigQuery staging table.
+3. **Transform**
+   - Create country-level tables from the staging layer.
+   - Generate reporting views for business insights.
+
+### 🔍 Data Layers
+
+- **Staging Layer**: Raw unprocessed data from GCS.
+- **Transform Layer**: Cleaned and structured tables.
+- **Reporting Layer**: Aggregated and filtered views for dashboarding.
+
+---
+
+## 🧰 Requirements
+
+### Tools and Cloud Services
+
+- **Google Cloud Platform (GCP)**
   - Cloud Storage
-- **Apache Airflow**:
-  - Airflow with Google Cloud providers
-
+  - BigQuery
+  - Compute Engine (to host Airflow)
+- **Apache Airflow**
+  - With Google Cloud provider integrations
 
 ---
 
-## Setup Instructions
+## ⚙️ Setup Instructions
 
 ### Prerequisites
-1. A Google Cloud project with:
-   - BigQuery and Cloud Storage enabled.
-   - Service account with required permissions.
-2. Apache Airflow installed.
-3. Use Blog for Airflow Installation on VM - https://www.techtrapture.com/blogs/673a2625dd155b000b7cdb3b
 
-## End Result
+1. Active GCP project with:
+   - Enabled APIs: BigQuery, Cloud Storage
+   - Service Account with appropriate permissions
+2. Apache Airflow (recommended via VM or Docker)
+3. Reference blog for VM-based setup:  
+   👉 [TechTrapture Blog on Airflow Setup](https://www.techtrapture.com/blogs/673a2625dd155b000b7cdb3b)
 
-### Airflow Pipeline
+---
 
-![image](https://github.com/user-attachments/assets/8e8b8373-9d2a-417b-9fd9-5f42171c06f8)
+## ✅ Final Output
 
+### 📊 Airflow DAG
 
-### Looker Studio Report
+![Airflow DAG](https://github.com/user-attachments/assets/8e8b8373-9d2a-417b-9fd9-5f42171c06f8)
 
-![image](https://github.com/user-attachments/assets/d06f0d3e-a1d0-404a-9eb7-c61c85df8257)
+### 📈 Looker Studio Report
 
+![Looker Report](https://github.com/user-attachments/assets/d06f0d3e-a1d0-404a-9eb7-c61c85df8257)
 
+---
+
+## 📬 Contact
+
+For questions or feedback, feel free to reach out via GitHub Issues or connect on LinkedIn.
